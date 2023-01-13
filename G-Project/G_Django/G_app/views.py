@@ -1,9 +1,11 @@
 from django.shortcuts import render
+from django.template import loader
 from django.http import HttpResponse
 
 # electronics page
-def electronics(request):
-    return HttpResponse("<h2>Your are in electronics page</h2>")
+def facebook(request):
+    template = loader.g
+    return HttpResponse(template.render())
 
 # mecanics page
 def mecanics(request):
