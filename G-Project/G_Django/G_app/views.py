@@ -1,11 +1,28 @@
 from django.shortcuts import render
 from django.template import loader
 from django.http import HttpResponse
+from .models import user
 
 # electronics page
-def facebook(request):
-    template = loader.g
-    return HttpResponse(template.render())
+def users(request):
+
+    # Get the data in the models
+    data = user.objects.all()
+
+    # Get template page
+    template = loader.get_template('users.html')
+
+    # make the data in json file
+    context = {
+        'user' : data,
+    }
+
+    # Return an HttpResponse
+    return HttpResponse(template.render(context, request))
+
+
+
+
 
 # mecanics page
 def mecanics(request):

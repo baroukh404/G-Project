@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>User</title>
+</head>
+<body>
+    <h2>All User</h2>
+    <div>
+        <ul>
+            {% for x in user %}
+            <li>{{ x.Firtname }} | {{ x.Lastname }} | {{ x.Phone }} | {{ x.Email }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</ul>
+</body>
+</html>
