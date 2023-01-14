@@ -24,5 +24,5 @@ urlpatterns = [
     path('contact/', views.contact, name="contact"), 
     path('register/', views.register, name="register"), 
     path('user/', views.user, name="user"),
-    path('application/', include("G_app.urls"))
+    path('', include("G_app.urls"))
 ]

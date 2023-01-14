@@ -1,10 +1,17 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>User</title>
+    <style>
+    body{
+    	background-color: black;
+    }
+    </style>
 </head>
+
 <body>
     <h2>All User</h2>
     <div>
@@ -12,6 +19,7 @@
             {% for x in user %}
             <li>{{ x.Firtname }} | {{ x.Lastname }} | {{ x.Phone }} | {{ x.Email }}</li>
             {% endfor %}
+            <a href="{% url 'mathematics' %}">math</a>
         </ul>
     </div>
 </ul>
