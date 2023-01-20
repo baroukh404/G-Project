@@ -1,0 +1,5 @@
+# Ignore these Files and Folder
+
+*.sqlite3
+_django/
+manage.py
