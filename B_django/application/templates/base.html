@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="shorcut ico"  href="{% static 'application/images/B-logo.ico'%}">
+{% block title %}{% endblock %}
+{% block style %}{% endblock %}
+	
+</head>
+<body class="layout-fixed layout-navbar-fixed control-sidebar-slide-open sidebar-collapse sidebar-closed layout-footer-fixed">
+<div class="wrapper">
+{% block header %}{% endblock %}
+{% block content %}{% endblock %}
+{% block footer %}{% endblock %}
+{% block script %}{% endblock %}	
+</div>
+</body>
+</html>
