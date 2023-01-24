@@ -1,3 +1,80 @@
+<script>
+//////////////////////////////////////////////////////////////
+	// NODE in JavaScript
+	// The entire document is a document node
+	// Every HTML element is an element node
+	// The Text inside HTML elements are text nodes
+	// Every HTML attribute are attribute node
+	// All comments are comment node
+//////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////
+// - with the HTML DOM, all nodes in the node tree can be accessed by JavaScript.
+// New node can be created, and all nodes can be modified or deleted.
+//////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////
+	// NODE RELATIONSHIP
+	// In a node tree, the top node is called the root (or root node)
+	// Every node has exactly one parent, except root(wich has no parent)
+	// A node can have a number of children
+	// Siblings(brothers and sisters) are nodes with the same parent
+//////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////
+// From HTML you can read:
+// <html> is the root node
+// <html> has no parent
+// <html> is the parent of <head> and <body>
+// <body> is the last child of <html>
+//////////////////////////////////////////////////////////////
+// <head> has on child: <title>
+// <title> has one child (a text node): "DOM tutorial"
+// <body> has to child: <h1> and <p>
+// <h1> has on child: "DOM" Lesson one
+// <p> has one child: "Hello world"
+// <h1> and <p> are siblings (mpirahalahy)
+//////////////////////////////////////////////////////////////
+
+// This is the tree:
+// <html> (root)
+// 	<head> (firstchild of root, parent of <title>)
+//		<title> (Parent of text node: DOM Tutorial)
+// 			"DOM Tutorial" 
+// 	<body> (Lastchild of root, parent of <h1> and <body>)
+// 		|<h1> (firstChild of body, brother of <p>, previousSibling of <p>)
+// 		|	"DOM Lesson"
+// 		|<p>	(lastChild of body, brother of <p>, nextSibling of <h1>)
+// 		|	"Hello world"
+//////////////////////////////////////////////////////////////
+// - NAVIGATE BETWEEN NODES
+// 1- parentNode
+// 2- childNodes[nodenumber]
+// 3- firstChild
+// 4- lastChild
+// 5- nextSibling
+// 6- previousSibling
+//////////////////////////////////////////////////////////////
+// CHILD NODE AND NODE VALUES
+// there is an element:
+// <title>This is a title</title>
+// This element node contains a text node: "This is a title"
+// The value can be accessed by the node's innerHTML property
+// accessing the innerHTML is the same as accessing the nodeValue of the first child
+//////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////
+// Examples:
+// <p class='paragraph' id='demo'>This is an example</p>
+// we have two ways to get the text node in this element node
+// Ex-1:
+// document.getElementById('demo').innerHTML;
+// Ex-2:
+// document.getElementById('demo').firstChild.nodeValue;
+// Ex-3:
+// document.getElementById('demo').childNodes[0].nodeValue;
+
+</script>
 {% extends 'base.html' %}
 {% load static %}
 {% block title %}<title>register</title>{% endblock %}
@@ -8,31 +85,67 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
 <style type="text/css">	
 .main{
-	background-color: #595959;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #dbdf10;
 }
 </style>
 {% endblock %}
 {% block content %}
 <div class="row">
-	<div class="col-lg-3 main container-lg border">
-		<p>First</p>
+	<div class="col-md-1 main container-lg border paragraph">
+		1
 	</div>
-	<div class="col-lg-3 main container-lg border">
-		<p>Second</p>
+	<div class="col-md-1 main container-lg border paragraph">
+		2
 	</div>
-	<div class="col-lg-3 main container-lg border">
-		<p>Third</p>
+	<div class="col-md-1 main container-lg border paragraph">
+		3
 	</div>
-	<div class="col-lg-3 main container-lg border">
-		<p>Forth</p>
+	<div class="col-md-1 main container-lg border paragraph">
+		4
+	</div>
+	<div class="col-md-1 main container-lg border paragraph">
+		5
+	</div>
+	<div class="col-md-1 main container-lg border paragraph">
+		5
+	</div>
+	<div class="col-md-1 main container-lg border paragraph">
+		6
+	</div>
+	<div class="col-md-1 main container-lg border paragraph">
+		7
+	</div>
+	<div class="col-md-1 main container-lg border paragraph">
+		8
+	</div>
+	<div class="col-md-1 main container-lg border paragraph">
+		9
+	</div>
+	<div class="col-md-1 main container-lg border paragraph">
+		10
+	</div>
+	<div class="col-md-1 main container-lg border paragraph">
+		11
 	</div>
 </div>
-<div class="container">
-	<a href="#" class="nav-link" data-toggle="tooltip" title="Mouse over me">Give me a Gift</a>
+<div class="container" style="width: 200px;height: 200px;">
+	<h1 id="">My First Page</h1>
+	<!-- Second child -->
+	<div id='id-01'>
+		<a href='#'>Login</a>
+		<div id='id-02'>
+			<div id='id-03'>
+				<div id='id-04'>
+					<p id='id-05'>This is a paragraph</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<p id='id-06'></p>
 </div>
-<!-- <div class="container-fluid-md border main">
-
-</div> -->
 {% endblock %}
 {% block script %}
 <!-- jQuery library -->
@@ -42,6 +155,7 @@
 <!-- Latest compiled JavaScript -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 <script>
+
 	// $(document).ready(function(){
 	// 	$('data-toggle=["tooltip"]').tooltip();
 	// })
